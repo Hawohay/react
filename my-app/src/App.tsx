@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import { AppRoutes } from "./routes";
-import { AppThemeProvider, useAppThemeContext } from "./shared/contexts";
+import { AppThemeProvider } from "./shared/contexts";
 
 
 
