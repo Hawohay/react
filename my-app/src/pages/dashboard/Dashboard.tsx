@@ -4,6 +4,8 @@ import React from 'react';
 export const Dashboard = () => {
 
     return (
-        <LayoutBaseDePagina></LayoutBaseDePagina>
+        <LayoutBaseDePagina titulo='Página Inicial'>
+            Testando
+        </LayoutBaseDePagina>
     );
 };

@@ -51,7 +51,7 @@ export const MenuLateral: React.FC<IAppThemeProviderProps> = ({ children }) => {
                     <Box width='100%' height={theme.spacing(20)} display='flex' alignItems='center' justifyContent='center'>
                         
                         <Avatar 
-                            sx={{ height: theme.spacing(14), width: theme.spacing(14) }}
+                            sx={{ height: theme.spacing(12), width: theme.spacing(12) }}
                             src="/hawohay.jpg" />
                     </Box>
 

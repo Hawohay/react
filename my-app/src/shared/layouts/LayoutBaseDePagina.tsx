@@ -1,12 +1,40 @@
-import { Box } from '@mui/material';
+import { Typography } from '@material-ui/core';
+import { Box, Icon, IconButton, useTheme, useMediaQuery, Theme } from '@mui/material';
 import React from 'react';
+import { useDrawerContext } from '../contexts';
 
-export const LayoutBaseDePagina: React.FC = () => {
+interface ILayoutBaseDePaginaProps {
+    titulo: string;
+    children: React.ReactNode;
+}
 
+export const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaProps> = ({ titulo, children }) => {
+    const smDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'));
+    const theme = useTheme();
 
-    return(
-        <Box>
-            Teste
+    const { toggleDrawerOpen } = useDrawerContext();
+
+    return (
+        <Box height='100%' display='flex' flexDirection='column' gap={1}>
+            <Box padding={1} display='flex' alignItems='center' height={theme.spacing(12)} gap={1}>
+                {smDown && (
+                    <IconButton onClick={toggleDrawerOpen}>
+                        <Icon>menu</Icon>
+                    </IconButton>
+                )}
+                
+                <Typography variant='h5'>
+                    {titulo}
+                </Typography>
+            </Box>
+
+            <Box>
+                Barra de ferramentas
+            </Box>
+
+            <Box>
+                {children}
+            </Box>
         </Box>
     );
 };
