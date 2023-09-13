@@ -49,7 +49,10 @@ export const MenuLateral: React.FC<IAppThemeProviderProps> = ({ children }) => {
             <Drawer open={isDrawerOpen} variant={smDown ? 'temporary' : 'permanent'} onClose={toggleDrawerOpen}>
                 <Box width={theme.spacing(28)} height='100%' display='flex' flexDirection='column'>
                     <Box width='100%' height={theme.spacing(20)} display='flex' alignItems='center' justifyContent='center'>
-                        <Avatar sx={{ height: theme.spacing(12), width: theme.spacing(12) }} src=""/>
+                        
+                        <Avatar 
+                            sx={{ height: theme.spacing(14), width: theme.spacing(14) }}
+                            src="/hawohay.jpg" />
                     </Box>
 
                     <Divider />
