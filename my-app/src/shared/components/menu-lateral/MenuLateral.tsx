@@ -1,4 +1,4 @@
-import React from 'react'; // Importe o React explicitamente
+import React from 'react'; 
 import { Avatar, Drawer, useTheme, Divider, useMediaQuery, List, ListItemButton, ListItemIcon, ListItemText, Icon } from '@mui/material';
 import { Box } from '@mui/system';
 import { useAppThemeContext, useDrawerContext } from '../../contexts';
@@ -75,7 +75,7 @@ export const MenuLateral: React.FC<IAppThemeProviderProps> = ({ children }) => {
                         <List component='nav'>
                             <ListItemButton  onClick={toggleTheme}>
                                 <ListItemIcon>
-                                    <Icon>theme</Icon>
+                                    <Icon>dark_mode</Icon>
                                 </ListItemIcon>
                                 <ListItemText primary='Alternar tema' />
                             </ListItemButton>

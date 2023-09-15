@@ -15,7 +15,7 @@ export const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaProps> = ({ titulo,
     const { toggleDrawerOpen } = useDrawerContext();
 
     return (
-        <Box display='flex' flexDirection='column' gap={1}>
+        <Box height='100%' display='flex' flexDirection='column' gap={1}>
             <Box padding={1} display='flex' alignItems='center' height={theme.spacing(12)} gap={1}>
                 {smDown && (
                     <IconButton onClick={toggleDrawerOpen}>

@@ -18,6 +18,11 @@
         "react"
     ],
     "rules": {
+        // Suprimir erros para 'import React' ausente em arquivos
+        "react/react-in-jsx-scope": "off",
+        // Permitir sintaxe JSX em arquivos JS (para projetos Next.js)
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        // Demais regras do ESLint
         "indent": [
             "error",
             4
