@@ -1,7 +1,7 @@
 import React from 'react'; // Importe o React explicitamente
 import { Avatar, Drawer, useTheme, Divider, useMediaQuery, List, ListItemButton, ListItemIcon, ListItemText, Icon } from '@mui/material';
 import { Box } from '@mui/system';
-import { useDrawerContext } from '../../contexts';
+import { useAppThemeContext, useDrawerContext } from '../../contexts';
 import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
 
 
@@ -26,7 +26,7 @@ const ListItemLink: React.FC<IListItemLinkProps> = ({ to, icon, label, onClick }
         <ListItemButton selected={!!match} onClick={hadleClick}>
             <ListItemIcon>
                 <Icon>
-                    {icon} 
+                    {icon}
                 </Icon>
             </ListItemIcon>
             <ListItemText primary={label} />
@@ -43,14 +43,15 @@ export const MenuLateral: React.FC<IAppThemeProviderProps> = ({ children }) => {
     const theme = useTheme();
     const smDown = useMediaQuery(theme.breakpoints.down('sm'));
     const { isDrawerOpen, toggleDrawerOpen, drawerOptions } = useDrawerContext();
+    const  { toggleTheme } = useAppThemeContext();
 
     return (
         <>
             <Drawer open={isDrawerOpen} variant={smDown ? 'temporary' : 'permanent'} onClose={toggleDrawerOpen}>
                 <Box width={theme.spacing(28)} height='100%' display='flex' flexDirection='column'>
                     <Box width='100%' height={theme.spacing(20)} display='flex' alignItems='center' justifyContent='center'>
-                        
-                        <Avatar 
+
+                        <Avatar
                             sx={{ height: theme.spacing(12), width: theme.spacing(12) }}
                             src="/hawohay.jpg" />
                     </Box>
@@ -59,17 +60,28 @@ export const MenuLateral: React.FC<IAppThemeProviderProps> = ({ children }) => {
 
                     <Box flex={1}>
                         <List component='nav'>
-                            {drawerOptions.map((drawerOption) => ( 
+                            {drawerOptions.map((drawerOption) => (
                                 <ListItemLink
                                     key={drawerOption.path}
                                     icon={drawerOption.icon}
                                     to={drawerOption.path}
                                     label={drawerOption.label}
-                                    onClick={smDown ? toggleDrawerOpen: undefined}
+                                    onClick={smDown ? toggleDrawerOpen : undefined}
                                 />
                             ))}
                         </List>
                     </Box>
+                    <Box>
+                        <List component='nav'>
+                            <ListItemButton  onClick={toggleTheme}>
+                                <ListItemIcon>
+                                    <Icon>theme</Icon>
+                                </ListItemIcon>
+                                <ListItemText primary='Alternar tema' />
+                            </ListItemButton>
+                        </List>
+                    </Box>
+
                 </Box>
             </Drawer>
 
