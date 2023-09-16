@@ -1,5 +1,5 @@
-import { Typography } from '@material-ui/core';
-import { Box, Icon, IconButton, useTheme, useMediaQuery, Theme } from '@mui/material';
+
+import { Box, Icon, IconButton, useTheme, useMediaQuery, Theme, Typography } from '@mui/material';
 import React from 'react';
 import { useDrawerContext } from '../contexts';
 
