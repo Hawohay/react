@@ -17,8 +17,8 @@ export const LightTheme = createTheme({
             contrastText: '#ffffff',
         },
         background: {
-            default: '#fffff',
-            paper: '#f7f6f3',
+            paper: '#ffffff',
+            default: '#f7f6f3',
         }
     }
 });
