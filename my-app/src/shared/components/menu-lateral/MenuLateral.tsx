@@ -34,7 +34,6 @@ const ListItemLink: React.FC<IListItemLinkProps> = ({ to, icon, label, onClick }
     );
 };
 
-
 interface IAppThemeProviderProps {
     children: React.ReactNode;
 }
