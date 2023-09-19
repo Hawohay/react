@@ -32,7 +32,7 @@ export const AppRoutes = () => {
             <Route path='/pagina-inicial' element={<Dashboard />} />
 
             <Route path='/bens' element={<ListagemDeBens />} />
-            {/*<Route path='/cidades/detalhe/:id' element={<ListagemDeCidade />} />*/}
+            
 
             <Route path='*' element={<Navigate to='/pagina-inicial' />} />
         </Routes>
