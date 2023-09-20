@@ -4,9 +4,11 @@ import { FerramentasDaListagem } from '../../shared/components';
 import { useSearchParams } from 'react-router-dom';
 import { BensService } from '../../shared/services/api/bens/BensService';
 
+
+
 export const ListagemDeBens: React.FC = () => {
     const [searchParams, setSearchParams] = useSearchParams();
-
+    
     const busca = useMemo(() => {
         return searchParams.get('busca') || '';
     }, [searchParams]);

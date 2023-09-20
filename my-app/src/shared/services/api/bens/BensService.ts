@@ -1,12 +1,7 @@
 import { Environment } from '../../../environment';
 import { Api } from '../axios-config';
 
-interface IDetalheBens {
-    id: number;
-    patrimonio: number;
-    descricao: string;
-   
-}
+
 
 interface IListagemBens {
     id: number;
@@ -14,10 +9,20 @@ interface IListagemBens {
     descricao: string;
 }
 
+
+interface IDetalheBens {
+    id: number;
+    patrimonio: number;
+    descricao: string;
+
+}
+
+
 type TBensComTotalCount = {
     data: IListagemBens[];
     totalCount: number;
 }
+
 
 const getAll = async (page = 1, filter = ''): Promise<TBensComTotalCount | Error> => {
     try {
@@ -31,6 +36,7 @@ const getAll = async (page = 1, filter = ''): Promise<TBensComTotalCount | Error
                 totalCount: Number(headers['x-total-count'] || Environment.LIMITE_DE_LINHAS),
             };
         }
+        
         return new Error('Erro ao listar os registros.');
     } catch (error) {
         console.error(error);
