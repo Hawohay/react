@@ -23,7 +23,7 @@ export const AppRoutes = () => {
                 icon: 'chair',
                 path: '/bens',
                 label: 'Bens patrimoniais',
-            }            
+            },            
         ]);
     }, []);
 
