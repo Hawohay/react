@@ -4,6 +4,12 @@
             "id": 1,
             "patrimonio": "183129",
             "descricao": "Microcomputador tipo Desktop DELL, core I7-7700"
+        },
+
+        {
+            "id": 2,
+            "patrimonio": "183130",
+            "descricao": "Microcomputador tipo Desktop DELL, core I7-7700"
         }
     ]
 }
