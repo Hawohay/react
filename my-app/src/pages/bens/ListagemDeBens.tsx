@@ -22,6 +22,7 @@ export const ListagemDeBens: React.FC = () => {
                     alert(result.message);                    
                 } else {
                     console.log(result);
+                    return;
                 }
             });
     }, []);
